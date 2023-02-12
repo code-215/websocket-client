@@ -12,6 +12,8 @@ export class AppComponent {
   response: object | undefined
   greeting: string = '';
   name: string = '';
+  connectButtonDisabled = false;
+  disconnectButtonDisabled = true;
 
 
   constructor(private appService: AppService) {
@@ -22,10 +24,14 @@ export class AppComponent {
 
   connect() {
     this.appService.connect()
+    this.connectButtonDisabled = true
+    this.disconnectButtonDisabled = false
   }
 
   disconnect() {
     this.appService.disconnect()
+    this.connectButtonDisabled = false
+    this.disconnectButtonDisabled = true
   }
 
   sendMessage() {

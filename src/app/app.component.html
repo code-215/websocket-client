@@ -8,9 +8,9 @@
       <form class="form-inline">
         <div class="form-group">
           <label for="connect">WebSocket connection: &nbsp;</label>
-          <button (click)="connect()" class="btn btn-default" type="submit">Connect</button>
+          <button (click)="connect()" class="btn btn-default" type="submit" [disabled]="connectButtonDisabled">Connect</button>
           &nbsp;&nbsp;
-          <button (click)="disconnect()" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+          <button (click)="disconnect()" class="btn btn-default" type="submit" [disabled]="disconnectButtonDisabled">Disconnect
           </button>
         </div>
       </form>
